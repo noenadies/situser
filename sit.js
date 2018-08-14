@@ -33,6 +33,12 @@ function traerdef(stnode){
   });
 
 }
+
+
+
+
+
+
 //4.646993, -74.153212
 var varemail="";
 var varpass="";
@@ -54,6 +60,9 @@ function escribep(latcar,lngcar){
 document.getElementById("idp").innerHTML = "lat car: "+latcar +" "+" lng car: "+lngcar +" Colombia "+d ;
 
 }
+
+
+var idrepetir=0;
 function login(){
   //ahorasi(st1,st2,st3);
 console.log(general); 
@@ -63,10 +72,10 @@ lemail=getidvalor("idemail");
 lpass=getidvalor("idpass");
 for(var i in general){
     if(general[i].keymi==lemail&&general[i].pass==lpass){
-      ahorasi(nodeusersit,general[i].keymi,"buscar");
+   //   ahorasi(nodeusersit,general[i].keymi,"buscar");
       nodousuario=general[i].keymi;
 
-setTimeout(logeado(), 2000);
+setTimeout(logeado(), 1000);
 }
     else{
         //alert("pas o email erroneo");
@@ -77,7 +86,30 @@ setTimeout(logeado(), 2000);
 }
 
 
+function activar(){
+
+    //ahorasi(st1,st2,st3);
+
+ //setTimeout(hacermarcas, 2000);
+traerdef(nodeusersit);
+lemail=getidvalor("idemail");
+lpass=getidvalor("idpass");
+for(var i in general){
+    if(general[i].keymi==lemail&&general[i].pass==lpass){
+      ahorasi(nodeusersit,general[i].keymi,"buscar");
+      nodousuario=general[i].keymi;
+alert("buscando");
+setTimeout(reload, 2000);
+}
+    else{
+        //alert("pas o email erroneo");
+    }
+}
+
+}
+
 function logeado(){
+traerdef(nodeusersit);
 
 varcarlat=parseFloat(general[nodousuario].lat);
 varcarlng=parseFloat(general[nodousuario].lng);
@@ -87,13 +119,20 @@ varcarlng=parseFloat(general[nodousuario].lng);
   document.getElementById("idp").style.display = "flex";
 //varcarlat=4.646993;
 //varcarlng=-74.153212;
-mimapa(varcarlng,varcarlat);
+
+setTimeout(llamamapa,1000);
 escribep(varcarlat,varcarlng);
 
 
 }
 
 
+function llamamapa(){
+traerdef(nodeusersit);
+varcarlat=parseFloat(general[nodousuario].lat);
+varcarlng=parseFloat(general[nodousuario].lng);
+mimapa(varcarlng,varcarlat);
+}
 
 
 
