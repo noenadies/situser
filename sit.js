@@ -20,7 +20,7 @@ var nodeusersit="usertsit";
 
 //traerdef(nodeusersit);
 
-
+var nodousuario="";
 
 
 
@@ -55,23 +55,18 @@ document.getElementById("idp").innerHTML = "lat car: "+latcar +" "+" lng car: "+
 
 }
 function login(){
+  //ahorasi(st1,st2,st3);
 console.log(general); 
+ //setTimeout(hacermarcas, 2000);
 traerdef(nodeusersit);
 lemail=getidvalor("idemail");
 lpass=getidvalor("idpass");
 for(var i in general){
     if(general[i].keymi==lemail&&general[i].pass==lpass){
-    
-varcarlat=parseFloat(general[i].lat);
-varcarlng=parseFloat(general[i].lng);
+      ahorasi(nodeusersit,general[i].keymi,"buscar");
+      nodousuario=general[i].keymi;
 
-  document.getElementById("idlog").style.display = "none";
-  document.getElementById("map").style.display = "flex";
-  document.getElementById("idp").style.display = "flex";
-//varcarlat=4.646993;
-//varcarlng=-74.153212;
-mimapa(varcarlng,varcarlat);
-escribep(varcarlat,varcarlng);
+setTimeout(logeado(), 2000);
 }
     else{
         //alert("pas o email erroneo");
@@ -80,6 +75,30 @@ escribep(varcarlat,varcarlng);
 
 
 }
+
+
+function logeado(){
+
+varcarlat=parseFloat(general[nodousuario].lat);
+varcarlng=parseFloat(general[nodousuario].lng);
+
+  document.getElementById("idlog").style.display = "none";
+  document.getElementById("map").style.display = "flex";
+  document.getElementById("idp").style.display = "flex";
+//varcarlat=4.646993;
+//varcarlng=-74.153212;
+mimapa(varcarlng,varcarlat);
+escribep(varcarlat,varcarlng);
+
+
+}
+
+
+
+
+
+
+
 
 
 
@@ -140,8 +159,14 @@ var radius = 60;
 }
 
 
-function  ahorasi(){
+function  ahorasi(st1,st2,st3){
+firebase.database().ref().child(String(st1)).child(String(st2)).child(String(st3)).set(String(Math.random())+String(Math.random()));
 
 
+}
 
+function reload(){
+
+
+  location.reload();
 }
