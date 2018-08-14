@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Create circles</title>
+    <link rel="stylesheet" href="https://js.arcgis.com/3.25/esri/css/esri.css">
+   <style>
+       html, body, #map {
+        height: 100%; width: 100%; margin: 0; padding: 0; 
+      }
+      #controls {
+        background: #fff;
+        box-shadow: 0 6px 6px -6px #999;
+        color: #444;
+        font-family: sans-serif;
+        height: auto;
+        left: 1em;
+        padding: 1em;
+        position: absolute;
+        top: 1em;
+        width: auto;
+        z-index: 40;
+      }
+      #controls div {
+        padding: 0 0 1em 0;
+      }
+       .container {
+
+        color: #616161;
+background: #bababa;
+text-shadow: #e0e0e0 1px 1px 0;
+        background: #D0E4F5 url("https://icdn6.digitaltrends.com/image/bestwallpapers01-640x640.jpg") no-repeat scroll -50px -21px;
+  display: flex;
+  justify-content: center;
+}
+.clespacio {
+  height: : 200px;
+}
+
+
+
+.butn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.butn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+    </style>
+    <script src="jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
+    
+<div class="container">
+  <div id="idlog"><div class="clespacio"></div>  <p style="height: 50px;"><br><br><p style="height: 50px;"><br><h3>BUSCAR MICARRO</h3><div class="clespacio"></div>  <p style="height: 50px; opacity: 0.5;"><br><br><p style="height: 50px;"><br> E:mail<input  style="width:  90%; opacity: 0.5;" type="text"
+   id="idemail" style="height: 50px;" value="mi@gmail.com"><div class="clespacio"></div>  <p style="height: 50px;"><br><br><p style="height: 50px;"><br>
+  Pass:<input style="width:  90%; opacity: 0.5;" type="text"
+   id="idpass" value="mipass1">
+<button class="butn" onclick="login()">Click me</button>
+</div>
+
+  
+   <script src="https://js.arcgis.com/3.25/"></script>
+
+
+    <div id="map"></div>
+    <div id="controls">
+      <div>Click the map.</div>
+      <input type="checkbox" id="geodesic">
+      <label for="geodesic">Geodesic?</label>
+
+      <button onclick="myFunction()">Click me</button>
+    </div>
+
+
+
+
+
+  </div>
+  <br><p></p><br>
+    
+  <br><p id ="idp">This is some text in a paragraph.</p>
+    
+    <script>
+      document.getElementById("idp").style.display = "none";
+  document.getElementById("map").style.display = "none";
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="sit.js"></script>
+   
+    </script>
+  </body>
+</html>
